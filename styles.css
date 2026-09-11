@@ -245,6 +245,13 @@ h1,h2,h3{ font-family:var(--font-display); font-weight:700; line-height:1.14; }
 .dato-ico svg{ width:21px; height:21px; }
 .dato strong{ display:block; color:var(--tinta); }
 .dato span{ display:block; color:var(--tinta-suave); font-size:.92rem; }
+/* El indicador Abierto/Cerrado dentro de la tarjeta de horario reusa
+   .status-line, pero esa regla de arriba (.dato span) le pondria
+   display:block al punto y al texto y le rompería la forma al puntito.
+   Con una clase mas especifica se corrige sin pelear con !important. */
+.dato .dato-status{ margin:10px 0 0; }
+.dato .dato-status .status-dot{ display:inline-block; }
+.dato .dato-status span:not(.status-dot){ display:inline; font-weight:600; color:var(--tinta); }
 .visitanos-ctas{ display:flex; flex-wrap:wrap; gap:11px; margin-top:30px; }
 .map-frame{
   border-radius:var(--radio-g); overflow:hidden; box-shadow:var(--sombra-alta);
