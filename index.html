@@ -51,11 +51,16 @@
   -   @carbelcoffe (con una sola 'e'), cuenta que YA NO EXISTE. Su cuenta real es
   -   @carbelcoffee. Ese link está roto para todo el que escanee el QR.
 
+  ✅ CONFIRMADO 10-09-2026 (Matías verificó directamente con el local):
+  - WHATSAPP: el número SÍ tiene WhatsApp. Los tres botones de contacto usan
+  -   wa.me en vez de tel:.
+  - HORARIO REAL (story de Instagram del local, no coincide con la carta ni con
+  -   Google): lun-mié 07:15-20:30, jue-vie 07:15-21:00, sáb 09:30-21:30,
+  -   dom 09:30-19:30. horarioDeHoy() en script.js ya lo calcula por día.
+  - LOGO REAL: fotos/logo.jpg, entregado por el local. Reemplaza el ícono
+  -   genérico de taza en el loader y en el header.
+
   ⚠️ PENDIENTE / NUNCA INVENTADO:
-  - WHATSAPP: el número es móvil y ellos mismos lo publican como canal de contacto,
-  -   pero NO se pudo confirmar que tenga WhatsApp. Por eso la página usa tel:.
-  -   Preguntarles y cambiarlo a wa.me si corresponde.
-  - HORARIO: su carta dice 07:00-20:30 y Google dice cierre 21:00. Confirmar cuál es.
   - PRECIOS: quedan congelados al 10-09-2026. Hay que actualizarlos cuando suban.
   - La sección 'Especial 18 de septiembre' es de temporada: sacarla después del 18
   -   o convertirla en una sección de temporada rotativa.
@@ -74,7 +79,7 @@
 
 <div id="loader">
   <div class="loader-marca" aria-hidden="true">
-    <svg viewBox="0 0 64 64" width="48" height="48"><path d="M10 22h34v18a14 14 0 0 1-14 14h-6a14 14 0 0 1-14-14z" fill="currentColor"/></svg>
+    <img src="fotos/logo.jpg" alt="" width="72" height="72">
   </div>
 </div>
 
@@ -82,7 +87,7 @@
   <div class="header-inner">
     <button class="brand" data-tab="inicio">
       <span class="brand-ico" aria-hidden="true">
-        <svg viewBox="0 0 64 64" width="22" height="22"><path d="M10 22h34v18a14 14 0 0 1-14 14h-6a14 14 0 0 1-14-14z" fill="currentColor"/></svg>
+        <img src="fotos/logo.jpg" alt="" width="30" height="30">
       </span>
       <span class="brand-name">CARBEL</span>
     </button>
@@ -96,7 +101,7 @@
     </nav>
 
     <div class="header-actions">
-      <a class="btn btn-solid btn-sm" href="tel:+56954340455">Llamar</a>
+      <a class="btn btn-solid btn-sm" href="https://wa.me/56954340455" target="_blank" rel="noopener">WhatsApp</a>
       <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -279,16 +284,18 @@
             <span class="dato-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
             <div>
               <strong>Horario</strong>
-              <span>Todos los días de 07:00 a 20:30</span>
-              <span class="nota-fuente">Horario publicado por ellos mismos en su carta digital. Su ficha de Google dice 21:00 — conviene confirmarlo.</span>
+              <span>Lunes a miércoles: 07:15 – 20:30</span>
+              <span>Jueves y viernes: 07:15 – 21:00</span>
+              <span>Sábado: 09:30 – 21:30 · Domingo: 09:30 – 19:30</span>
+              <span class="nota-fuente">Horario publicado por ellos mismos en su Instagram.</span>
             </div>
           </div>
-          <div class="dato">
+          <a class="dato dato-link" href="https://wa.me/56954340455" target="_blank" rel="noopener">
             <span class="dato-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1z"/></svg></span>
-            <div><strong>+56 9 5434 0455</strong><span>Teléfono publicado en su ficha de Google</span></div>
-          </div>
+            <div><strong>+56 9 5434 0455</strong><span>Toca para escribir por WhatsApp</span></div>
+          </a>
           <div class="visitanos-ctas">
-            <a class="btn btn-solid" href="tel:+56954340455">Llamar al local</a>
+            <a class="btn btn-solid" href="https://wa.me/56954340455" target="_blank" rel="noopener">Escribir por WhatsApp</a>
             <a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&destination=Carbel+Coffee+San+Bernardo&destination_place_id=0x9662d96379161667:0x7e8b86aa48904a63" target="_blank" rel="noopener">Cómo llegar</a>
             <a class="btn btn-ghost" href="https://waze.com/ul?ll=-33.5916039,-70.7089945&navigate=yes" target="_blank" rel="noopener">Abrir en Waze</a>
           </div>
@@ -326,8 +333,8 @@
   <a href="https://instagram.com/carbelcoffee" target="_blank" rel="noopener" class="float-btn float-ig" aria-label="Instagram de Carbel Coffee & Pastry">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg>
   </a>
-  <a href="tel:+56954340455" class="float-btn float-tel" aria-label="Llamar a Carbel Coffee & Pastry">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1z"/></svg>
+  <a href="https://wa.me/56954340455" target="_blank" rel="noopener" class="float-btn float-tel" aria-label="Escribir a Carbel Coffee & Pastry por WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.79.47 3.47 1.28 4.93L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.51 2 12.04 2zm0 18.06h-.01a8.2 8.2 0 0 1-4.18-1.14l-.3-.18-3.14.82.84-3.06-.2-.32a8.16 8.16 0 0 1-1.25-4.36c0-4.52 3.68-8.2 8.21-8.2 2.19 0 4.25.85 5.8 2.41a8.14 8.14 0 0 1 2.4 5.8c0 4.52-3.68 8.2-8.17 8.2zm4.5-6.14c-.25-.12-1.47-.72-1.7-.81-.23-.08-.4-.12-.56.13-.17.24-.65.8-.79.97-.15.17-.29.19-.54.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.22-1.46-1.37-1.7-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.15.16-.25.24-.41.08-.17.04-.31-.02-.44-.06-.12-.56-1.34-.77-1.83-.2-.48-.4-.42-.56-.42h-.48c-.17 0-.44.06-.67.31-.23.24-.87.85-.87 2.08 0 1.22.89 2.4 1.02 2.57.12.16 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.53.59.19 1.13.16 1.55.1.47-.07 1.47-.6 1.68-1.19.2-.58.2-1.08.14-1.19-.06-.11-.23-.17-.48-.29z"/></svg>
   </a>
 </div>
 <script src="vida.js"></script>

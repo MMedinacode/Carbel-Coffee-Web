@@ -643,9 +643,15 @@ document.getElementById('navToggle').addEventListener('click', function () {
 });
 
 /* ---------- INDICADOR ABIERTO / CERRADO ----------
-   Horario 07:00-20:30 según SU PROPIA carta digital. Ojo: la ficha de Google dice que cierran a las 21:00 — hay una contradicción entre ambos y conviene que el local la resuelva. Se usa el dato propio del negocio por ser el suyo. */
+   Horario real confirmado el 10-09-2026 (story de Instagram del propio local):
+   varia por dia de la semana, a diferencia de la mayoria de los proyectos del
+   portafolio que abren siempre a la misma hora. */
 function horarioDeHoy() {
-  return [7 * 60, 20 * 60 + 30];
+  const dia = new Date().getDay(); // 0=domingo, 1=lunes ... 6=sabado
+  if (dia >= 1 && dia <= 3) return [7 * 60 + 15, 20 * 60 + 30]; // lun a mie
+  if (dia === 4 || dia === 5) return [7 * 60 + 15, 21 * 60];    // jue y vie
+  if (dia === 6) return [9 * 60 + 30, 21 * 60 + 30];            // sabado
+  return [9 * 60 + 30, 19 * 60 + 30];                            // domingo
 }
 
 function actualizarEstado(dotId, textId) {
